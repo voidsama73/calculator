@@ -1,3 +1,11 @@
+:root {
+  --black: #222831;
+  --carbon: #31363f;
+  --teal: #76abae;
+  --grey: #eeeeee;
+  --yellow: #ffa823;
+}
+
 *,
 *::before,
 *::after {
@@ -7,5 +15,90 @@
 }
 
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--carbon);
+  padding: 1rem;
+}
+
+.calculator {
+  width: 70%;
+  padding: 3rem;
+  border-radius: 3rem;
+  box-shadow: -4px -4px 4px rgb(0, 0, 0), 4px 4px 4px black;
+}
+
+#output {
+  /* width: 55%; */
+  background-color: var(--grey);
+  box-shadow: -4px -4px 4px inset rgb(188, 188, 188);
+  height: 5rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--carbon);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: auto;
+  gap: 0.5rem;
+  background-color: var(--teal);
+  border-radius: 2rem;
+  margin-block: 2rem;
+}
+
+.dialpad,
+.operator {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+  border: none;
+  font-size: 1.5rem;
+  background-color: var(--black);
+  color: var(--grey);
+  cursor: pointer;
+  box-shadow: -3px -3px 4px inset black;
+}
+.erase {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--black);
+  color: var(--grey);
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: -3px -3px 4px inset black;
+  color: rgb(225, 42, 42);
+}
+#evaluate {
+  background-color: var(--yellow);
+  color: var(--carbon);
+  box-shadow: -3px -3px 4px inset rgb(163, 111, 6);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.operator {
+  color: var(--yellow);
 }
