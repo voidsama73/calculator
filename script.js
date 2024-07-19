@@ -100,7 +100,7 @@ notation.forEach((item) => {
 function addNotation() {
   if (this.id == "decimal") {
     if (firstNumber == "") {
-      firstNumber = this.textContent
+      firstNumber = "0" + this.textContent
       display.textContent = firstNumber
     }
 
@@ -109,7 +109,7 @@ function addNotation() {
       display.textContent = firstNumber
     }
     else {
-      secondNumber.includes(".") ? secondNumber :
+      secondNumber.includes(".") ? secondNumber : secondNumber == "" ? secondNumber = "0" + this.textContent :
         secondNumber = secondNumber + this.textContent;
       display.textContent = firstNumber + operator + secondNumber
     }
@@ -178,3 +178,20 @@ function mult(number1, number2) {
 function percent(number1, number2) {
   return ((Number(number1) / 100) * Number(number2));
 }
+
+
+//keyboard accessibility
+
+window.addEventListener("keypress", function (e) {
+  let targetKey = e.key;
+
+  if (e.key === "Enter") targetKey = "evaluate";
+  if (e.key === ".") targetKey = "decimal"
+  document.getElementById(targetKey).click()
+});
+
+
+window.addEventListener("keydown", function (e) {
+
+  if (e.key === "Backspace") del.click();
+})
