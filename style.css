@@ -1,9 +1,11 @@
 :root {
-  --black: #222831;
-  --carbon: #31363f;
-  --teal: #76abae;
-  --grey: #eeeeee;
-  --yellow: #ffa823;
+  --black: #000000;
+  --default-text-color: #ffffff;
+  --yellow: #fca311;
+  --button-bottomlayer: #ffffff;
+  --button-toplayer: #131618;
+  --bloodred: #c12929;
+  --ui-surface: #0d0c0b;
 }
 
 *,
@@ -16,86 +18,77 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--carbon);
-  padding: 1rem;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: var(--ui-surface);
 }
 
 .calculator {
-  margin: 2rem;
-  padding: 2rem;
-  border-radius: 3rem;
-  box-shadow: -4px -4px 4px rgb(0, 0, 0), 4px 4px 4px black;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 #output {
-  background-color: var(--grey);
-  box-shadow: -4px -4px 4px inset rgb(188, 188, 188);
   height: 4rem;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 1rem;
+  padding-block: 4rem;
+  padding-inline: 2rem;
   border-radius: 0.5rem;
-  margin: auto;
-  font-size: clamp(1rem, 2vw, 2rem);
+  margin-left: auto;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 600;
-  color: var(--carbon);
-  max-width: 25rem;
+  color: var(--default-text-color);
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 22px;
+  column-gap: 13px;
   padding: 1rem;
-  gap: 0.5rem;
-  max-width: 20rem;
-  background-color: var(--teal);
-  border-radius: 2rem;
-  margin-block: 1rem;
+  background-color: var(--ui-surface);
+}
+
+.buttons div {
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  transform: translateY(-5px);
+  border-radius: 10px;
+  background-color: var(--button-bottomlayer);
+  box-shadow: 0px 12px 10px var(--black);
 }
 
 .dialpad,
-.operator {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 100%;
+.operator,
+.erase {
+  position: absolute;
+  top: -5px;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 10px;
   border: none;
-  font-size: 1.5rem;
-  background-color: var(--black);
-  color: var(--grey);
+  background-color: var(--button-toplayer);
+  color: var(--default-text-color);
   cursor: pointer;
-  box-shadow: -3px -3px 4px inset black;
+  font-size: 2rem;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+  transition: all 50ms ease-in-out;
+  &:active {
+    transform: translateY(5px);
+  }
 }
 
 .erase {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 100%;
-  border: none;
-  background-color: var(--black);
-  color: var(--grey);
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: -3px -3px 4px inset black;
-  color: rgb(225, 42, 42);
+  color: var(--bloodred);
+  font-weight: 800;
 }
+
 #evaluate {
-  background-color: var(--yellow);
-  color: var(--carbon);
-  box-shadow: -3px -3px 4px inset rgb(163, 111, 6);
   font-size: 2rem;
   font-weight: 800;
 }
@@ -105,14 +98,42 @@ h1 {
 }
 
 @media (min-width: 480px) {
-  .erase {
-    height: 4rem;
-    width: 4rem;
-    font-size: 1.5rem;
+  .calculator {
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
   }
+  .buttons {
+    max-width: 400px;
+  }
+  .dialpad,
   .operator,
-  .dialpad {
-    height: 4rem;
-    width: 4rem;
+  .erase {
+    height: 4.5rem;
+    width: 6rem;
+  }
+
+  .buttons div {
+    height: 4.5rem;
+    width: 6rem;
+  }
+  #output {
+    margin: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .dialpad,
+  .operator,
+  .erase {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .buttons div {
+    height: 4.5rem;
+    width: 4.5rem;
   }
 }
