@@ -8,57 +8,59 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="calculator">
-      <div id="output"></div>
-      <div class="buttons">
-        <div><button class="erase" id="clear">C</button></div>
-        <div>
-          <button class="erase" id="delete">
-            <svg
-              width="48px"
-              height="48px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M11 10L15 14M11 14L15 10M2.7716 13.5185L7.43827 17.5185C7.80075 17.8292 8.26243 18 8.73985 18H18C19.1046 18 20 17.1046 20 16V8C20 6.89543 19.1046 6 18 6H8.73985C8.26243 6 7.80075 6.17078 7.43827 6.48149L2.7716 10.4815C1.84038 11.2797 1.84038 12.7203 2.7716 13.5185Z"
-                  stroke="#c12929"
-                  stroke-width="2"
+    <div class="calc-outer">
+      <div class="calculator">
+        <div id="output"></div>
+        <div class="buttons">
+          <div><button class="erase" id="clear">C</button></div>
+          <div>
+            <button class="erase" id="delete">
+              <svg
+                width="48px"
+                height="48px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g
+                  id="SVGRepo_tracerCarrier"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-              </g>
-            </svg>
-          </button>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M11 10L15 14M11 14L15 10M2.7716 13.5185L7.43827 17.5185C7.80075 17.8292 8.26243 18 8.73985 18H18C19.1046 18 20 17.1046 20 16V8C20 6.89543 19.1046 6 18 6H8.73985C8.26243 6 7.80075 6.17078 7.43827 6.48149L2.7716 10.4815C1.84038 11.2797 1.84038 12.7203 2.7716 13.5185Z"
+                    stroke="#c12929"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+          <div><button class="dialpad operator" id="%">%</button></div>
+          <div><button class="dialpad operator" id="/">/</button></div>
+          <div><button class="dialpad" id="7">7</button></div>
+          <div><button class="dialpad" id="8">8</button></div>
+          <div><button class="dialpad" id="9">9</button></div>
+          <div><button class="dialpad operator" id="*">X</button></div>
+          <div><button class="dialpad" id="4">4</button></div>
+          <div><button class="dialpad" id="5">5</button></div>
+          <div><button class="dialpad" id="6">6</button></div>
+          <div><button class="dialpad operator" id="-">-</button></div>
+          <div><button class="dialpad" id="1">1</button></div>
+          <div><button class="dialpad" id="2">2</button></div>
+          <div><button class="dialpad" id="3">3</button></div>
+          <div><button class="dialpad operator" id="+">+</button></div>
+          <div>
+            <button class="operator notation" id="negative">+/-</button>
+          </div>
+          <div><button class="dialpad" id="0">0</button></div>
+          <div><button class="operator notation" id="decimal">.</button></div>
+          <div><button class="operator" id="evaluate">=</button></div>
         </div>
-        <div><button class="dialpad operator" id="%">%</button></div>
-        <div><button class="dialpad operator" id="/">/</button></div>
-        <div><button class="dialpad" id="7">7</button></div>
-        <div><button class="dialpad" id="8">8</button></div>
-        <div><button class="dialpad" id="9">9</button></div>
-        <div><button class="dialpad operator" id="*">X</button></div>
-        <div><button class="dialpad" id="4">4</button></div>
-        <div><button class="dialpad" id="5">5</button></div>
-        <div><button class="dialpad" id="6">6</button></div>
-        <div><button class="dialpad operator" id="-">-</button></div>
-        <div><button class="dialpad" id="1">1</button></div>
-        <div><button class="dialpad" id="2">2</button></div>
-        <div><button class="dialpad" id="3">3</button></div>
-        <div><button class="dialpad operator" id="+">+</button></div>
-        <div><button class="operator notation" id="negative">+/-</button></div>
-        <div><button class="dialpad" id="0">0</button></div>
-        <div><button class="operator notation" id="decimal">.</button></div>
-        <div><button class="operator" id="evaluate">=</button></div>
       </div>
     </div>
   </body>
